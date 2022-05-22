@@ -1,2 +1,4 @@
-/src/.env
-/src/openapi/openapi.json
+/app/.env
+/app/openapi/openapi.json
+/app/storage/mysql
+.idea
