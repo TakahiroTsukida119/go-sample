@@ -32,5 +32,10 @@ cc0fd1e443d3   swaggerapi/swagger-ui:latest   "/docker-entrypoint.…"   3 secon
 eb674de517ed   go-sample_mysql                "docker-entrypoint.s…"   30 seconds ago      Up 2 seconds   0.0.0.0:3306->3306/tcp, 33060/tcp            go-sample-mysql
 43160562761a   go-sample_api                  "bash"                   2 minutes ago       Up 2 seconds   0.0.0.0:8000->8000/tcp                       go-sample-api
 fc6e46d1e48f   go-sample_nginx                "/docker-entrypoint.…"   About an hour ago   Up 2 seconds   0.0.0.0:80->80/tcp                           go-sample-nginx
-
 ```
+
+# Swagger
+`localhost:8080`
+
+# minio
+`localhost:9002`
