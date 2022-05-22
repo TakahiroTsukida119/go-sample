@@ -1,10 +1,11 @@
 FROM golang:1.18-buster
 
 ENV CGO_ENABLED=0
-#    GO111MODULE=auto
+ENV GO111MODULE=auto
 
-RUN apt-get update && \
-    go install github.com/cespare/reflex@latest && \
-    go install github.com/swaggo/swag/cmd/swag@latest && \
-    go install github.com/golang/mock/mockgen@latest
-
+RUN apt-get update
+#    go get github.com/cespare/reflex && \
+#    go get github.com/swaggo/swag/cmd/swag && \
+#    go get github.com/golang/mock/mockgen@latest
+#    go get github.com/gin-gonic/gin && \
+#    go get -u github.com/jinzhu/gorm
