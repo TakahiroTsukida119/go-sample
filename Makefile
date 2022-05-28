@@ -1,5 +1,5 @@
 up:
-	docker-compose up -d
+	docker-compose up
 
 build:
 	docker-compose build
@@ -14,7 +14,7 @@ down:
 	docker-compose down
 
 shell:
-	docker exec -it go-sample-api /bin/bash
+	docker exec -it go-sample-api /bin/sh
 
 nginx:
 	docker exec -it go-sample-nginx /bin/sh

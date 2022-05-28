@@ -1,16 +1,6 @@
 version: "3.7"
 
 services:
-  nginx:
-    build: ".docker/nginx"
-    container_name: go-sample-nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./.docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - api
-
   api:
     build: ".docker/api"
     container_name: go-sample-api
@@ -22,9 +12,20 @@ services:
     tty: true
     env_file:
       - app/.env
-#    command: sh ./scripts/api.sh
+#    command: bash -c "cd app && realize start --server"
+    command: sh ./scripts/api.sh
     depends_on:
       - mysql
+
+#  nginx:
+#    build: ".docker/nginx"
+#    container_name: go-sample-nginx
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ./.docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+#    depends_on:
+#      - api
 
   mysql:
     container_name: go-sample-mysql
