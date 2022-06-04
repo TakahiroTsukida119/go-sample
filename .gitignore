@@ -1,4 +1,4 @@
 /app/.env
-/app/openapi/openapi.json
+#/app/openapi/openapi.json
 /app/storage/mysql
 .idea

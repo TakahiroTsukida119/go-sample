@@ -2,23 +2,29 @@ package service
 
 import (
 	"github.com/TakahiroTsukida119/go-sample.git/model"
-	"github.com/TakahiroTsukida119/go-sample.git/service/interfaces"
+	"github.com/TakahiroTsukida119/go-sample.git/repository"
 )
 
-type UserService struct {
+type UserService interface {
+	Index() ([]*model.User, error)
 }
 
-func NewUserService() interfaces.UserService {
-	return &UserService{}
+type userService struct {
+	Name string
+	ur   repository.UserRepository
 }
 
-func (u UserService) Index() (model.User, error) {
-	return model.User{
-		Id:        "id",
-		Name:      "sample",
-		Email:     "example@test.test",
-		CreatedAt: "",
-		UpdatedAt: "",
-		DeletedAt: "",
-	}, nil
+func NewUserService(ur repository.UserRepository) UserService {
+	return &userService{
+		Name: "UserService",
+		ur:   ur,
+	}
+}
+
+func (us *userService) Index() ([]*model.User, error) {
+	_, err := us.ur.FetchAllUsers()
+	if err != nil {
+		return nil, err
+	}
+	return nil, nil
 }

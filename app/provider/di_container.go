@@ -2,7 +2,7 @@ package provider
 
 import "github.com/fgrosse/goldi"
 
-var _ *goldi.Container
+var DIContainer *goldi.Container
 
 func init() {
 	registry := goldi.NewTypeRegistry()
