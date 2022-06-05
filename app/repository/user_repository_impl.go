@@ -2,24 +2,26 @@ package repository
 
 import (
 	"github.com/TakahiroTsukida119/go-sample.git/model"
-	"github.com/TakahiroTsukida119/go-sample.git/repository/interfaces"
 	"gorm.io/gorm"
 )
 
-type UserRepository struct {
+type UserRepository interface {
+	FetchAllUsers() (*[]model.User, error)
+}
+
+type userRepository struct {
 	client *gorm.DB
 }
 
-func NewUserRepository(client *gorm.DB) interfaces.UserRepository {
-	return &UserRepository{client: client}
+func NewUserRepository(client *gorm.DB) UserRepository {
+	return &userRepository{client: client}
 }
 
-func (r UserRepository) Index() ([]model.User, error) {
-	var users []model.User
+func (ur *userRepository) FetchAllUsers() (*[]model.User, error) {
+	var _ []*model.User
+	//if err := ur.client.DB().(&users); err != nil {
+	//
+	//}
 
-	if err := r.client.First(&users); err != nil {
-
-	}
-
-	return users, nil
+	return nil, nil
 }
