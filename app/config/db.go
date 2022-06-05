@@ -15,8 +15,9 @@ type SQLHandler struct {
 
 var dbConn *SQLHandler
 
-func DBOpen() {
+func DBOpen() *SQLHandler {
 	dbConn = NewSQLHandler()
+	return dbConn
 }
 
 func DBClose() {

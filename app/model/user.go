@@ -1,8 +1,12 @@
 package model
 
-import "time"
+import (
+	"gorm.io/gorm"
+	"time"
+)
 
 type User struct {
+	gorm.Model
 	Id        string    `gorm:"column:id"`
 	Name      string    `gorm:"column:name"`
 	Email     string    `gorm:"column:email"`

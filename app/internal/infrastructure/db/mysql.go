@@ -19,7 +19,7 @@ func GetNewDBClient() *gorm.DB {
 	)
 	client, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Printf("新システムのDBクライアントの生成に失敗しました。%v\n", err)
+		log.Printf("DBクライアントの生成に失敗しました。%v\n", err)
 	}
 
 	return client
